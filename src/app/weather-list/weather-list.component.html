@@ -1,0 +1,25 @@
+<div class="container-fluid">
+    <div class="table-responsive row weather-list-style">
+        <h2>Weather Information</h2>
+        <table class="table-bordered table-hover table">
+            <thead>
+                <tr>
+                    <th>Sr.No.</th>
+                    <th>City Name</th>
+                    <th>Temperature</th>
+                    <th>SunRise Time</th>
+                    <th>SunSet Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let weather of weatherList;let i = index" (click)="getWeatherDetail(weather.name)">
+                    <td>{{ i + 1 }}</td>
+                    <td>{{ weather.name }}</td>
+                    <td>{{ weather.main.temp }}&deg;C</td>
+                    <td>{{ weather.sys.sunrise }}</td>
+                    <td>{{ weather.sys.sunset }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

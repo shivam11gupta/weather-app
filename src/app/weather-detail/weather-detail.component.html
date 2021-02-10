@@ -1,0 +1,23 @@
+<div class="container-fluid">
+    <div class="table-responsive row weather-list-style">
+        <h2>Weather Detail of {{ selectedCity }}</h2>
+        <table class="table-bordered table-hover table">
+            <thead>
+                <tr>
+                    <th>Sr.No.</th>
+                    <th>Date</th>
+                    <th>Temperature</th>
+                    <th>Sea Level</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of weatherDetail;let i = index">
+                    <td>{{ i + 1 }}</td>
+                    <td>{{ data.dt_txt }}</td>
+                    <td>{{ data.main.temp }}&deg;C</td>
+                    <td>{{ data.main.sea_level }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
